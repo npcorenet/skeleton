@@ -23,9 +23,9 @@ $container->add(\App\Service\CacheService::class)
 # Dependencies
 #
 $container->add(\Envms\FluentPDO\Query::class)
-    ->addArgument('mysql:host=db;dbname=db')
-    ->addArgument('db')
-    ->addArgument('db');
+    ->addArgument('mysql:host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'])
+    ->addArgument($_ENV['DB_USER'])
+    ->addArgument($_ENV['DB_PASSWORD']);
 
 $container->add(\Monolog\Logger::class)
     ->addArgument('app')
