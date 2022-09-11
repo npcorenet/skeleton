@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Service;
 
@@ -14,13 +15,11 @@ class CacheService
     public function loadFromCache(string $filename, bool $isJson = true): array
     {
         $fileLocation = Software::CACHE_DIR . '/' . $filename . '.json';
-        if(!$isJson)
-        {
+        if (!$isJson) {
             $fileLocation = Software::CACHE_DIR . '/' . $filename;
         }
 
-        if(!file_exists($fileLocation))
-        {
+        if (!file_exists($fileLocation)) {
             throw new CacheException('Could not load from cache: ' . $fileLocation);
         }
 
@@ -30,7 +29,6 @@ class CacheService
 
     public function writeToCache(string $filename)
     {
-
     }
 
 }

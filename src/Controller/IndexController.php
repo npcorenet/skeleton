@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Controller;
 
@@ -12,11 +13,9 @@ class IndexController
 
     public function load(RequestInterface $request): Response
     {
-
         Software::getLogger()->info('Opened Index');
 
         return new JsonResponse(200, ['Controller' => 'IndexController']);
-
     }
 
 }

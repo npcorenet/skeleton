@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 $request = \Laminas\Diactoros\ServerRequestFactory::fromGlobals(
     $_SERVER,

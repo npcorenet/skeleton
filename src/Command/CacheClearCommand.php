@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Command;
 
@@ -15,21 +16,19 @@ class CacheClearCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
-        $output->write('<fg=black;bg=blue>Starting Cache Clearing Operation</>'.PHP_EOL);
+        $output->write('<fg=black;bg=blue>Starting Cache Clearing Operation</>' . PHP_EOL);
 
         $count = 0;
-        foreach (glob(Software::CACHE_DIR.'/*') as $file) {
+        foreach (glob(Software::CACHE_DIR . '/*') as $file) {
             if ($file !== '.gitignore') {
                 unlink($file);
                 $count++;
             }
         }
 
-        $output->write('<fg=black;bg=blue>Cleared '. $count .' files from Cache</>'.PHP_EOL);
+        $output->write('<fg=black;bg=blue>Cleared ' . $count . ' files from Cache</>' . PHP_EOL);
 
         return Command::SUCCESS;
-
     }
 
 }
