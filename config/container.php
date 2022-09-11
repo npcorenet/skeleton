@@ -27,6 +27,12 @@ $container->add(\Envms\FluentPDO\Query::class)
     ->addArgument('db')
     ->addArgument('db');
 
+$container->add(\Monolog\Logger::class)
+    ->addArgument('app')
+    ->addMethodCall('pushHandler',
+        [(new \App\Factory\LoggerFactory())->createPushHandler()]
+    );
+
 $responseFactory = (new \Laminas\Diactoros\ResponseFactory());
 $strategy = (new \League\Route\Strategy\JsonStrategy($responseFactory))->setContainer($container);
 $router = (new \League\Route\Router())->setStrategy($strategy);

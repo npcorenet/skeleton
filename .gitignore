@@ -2,3 +2,4 @@
 /.ddev/
 /.idea/
 **/.env
+/public/test.php
