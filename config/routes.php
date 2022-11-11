@@ -8,6 +8,7 @@ $request = \Laminas\Diactoros\ServerRequestFactory::fromGlobals(
     $_FILES
 );
 
+/* @var Router $router */
 $router->get('/', 'App\Controller\IndexController::load');
 
 
