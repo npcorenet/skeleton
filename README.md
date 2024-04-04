@@ -2,7 +2,7 @@
 This is the basic project setup for our new Projects, which includes the most basic stuff for PHP Webapp Development.
 
 ## Requirements
-- PHP 8.1 or higher
+- PHP 8.3 or higher
 - MySQL/MariaDB Database
 - Composer
 - Shell Access for Console
@@ -23,3 +23,5 @@ This is the basic project setup for our new Projects, which includes the most ba
 - [symfony/dotenv](https://github.com/symfony/dotenv)
 - [laminas/laminas-diactoros](https://github.com/laminas/laminas-diactoros/)
 - [laminas/laminas-httphandlerrunner](https://github.com/laminas/laminas-httphandlerrunner)
+- [league/plates](https://github.com/thephpleague/plates)
+- [phpmailer/phpmailer](https://github.com/PHPMailer/PHPMailer)

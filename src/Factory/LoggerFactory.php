@@ -12,7 +12,7 @@ use Monolog\Logger;
 class LoggerFactory
 {
 
-    public function createPushHandler(string $name = 'app',string $logFilename = Software::LOG_FILENAME): StreamHandler
+    public function createPushHandler(string $logFilename = Software::LOG_FILENAME): StreamHandler
     {
         $fileLocation = Software::LOG_DIR.'/'.$logFilename;
 
